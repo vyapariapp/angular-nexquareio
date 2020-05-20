@@ -9,7 +9,7 @@ import {ComponentItem} from '../model/componentitem';
 export class ComponentItemComponent implements OnInit {
 
   @Input() data:ComponentItem;
-  @Output() onClickOnDelete: EventEmitter<number> = new EventEmitter<any>();
+  @Output() onClickOnDelete: EventEmitter<String> = new EventEmitter<any>();
 
   constructor() { }
 

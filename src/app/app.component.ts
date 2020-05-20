@@ -9,17 +9,22 @@ import {MatButtonModule} from '@angular/material/button';
 export class AppComponent  {
   name = 'Angular ' + VERSION.major;
   list:ComponentItem[]=[];
-  onClickOnDeleteCalled(index){
+  onClickOnDeleteCalled(id){
     
-    this.list.splice(index-1,1);
-    this.realIndex--;
+    for(let i=0;i<this.list.length;i++){
+      if(this.list[i].id==id){
+   this.list.splice(i,1);
+      }
+    }
+ 
+ 
   }
   ct=0;
-  realIndex=0;
+ 
   addCompoent(){
     this.ct++;
-    this.realIndex++;
-    this.list.push(new ComponentItem(this.ct,this.realIndex));
+    
+    this.list.push(new ComponentItem(this.ct ));
   }
 }
 
@@ -29,10 +34,10 @@ export class ComponentItem{
  value:String;
  id:String="#ddfew";
  pos=0;
- realIndex=0;
-constructor(index:number,indexR:number){
+ 
+constructor(index:number ){
   this.pos=index;
-  this.realIndex=indexR;
+  
   this.id=this.id+index.toString();
   this.title=this.title+index.toString();
   this.inputPlaceholder=this.inputPlaceholder+index.toString();
