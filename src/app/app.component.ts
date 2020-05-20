@@ -1,6 +1,6 @@
 import { Component, VERSION } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button'; 
- 
+
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
@@ -10,17 +10,18 @@ export class AppComponent  {
   name = 'Angular ' + VERSION.major;
   list:ComponentItem[]=[];
   onClickOnDeleteCalled(id){
-    
+     
     for(let i=0;i<this.list.length;i++){
       if(this.list[i].id==id){
-   this.list.splice(i,1);
+         this.list.splice(i,1);
       }
     }
  
  
   }
   ct=0;
- 
+
+
   addCompoent(){
     this.ct++;
     
