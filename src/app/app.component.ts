@@ -11,7 +11,7 @@ export class AppComponent  {
   list:ComponentItem[]=[];
   onClickOnDeleteCalled(index){
     
-    this.list.splice(index,1);
+    this.list.splice(index-1,1);
   }
   ct=0;
   addCompoent(){
